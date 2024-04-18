@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel, Tesoura</title>
+    
+    <link rel="stylesheet" href="/Pedra-Papel-Tesoura/style.css">
+    
+</head>
+<body>
+    <div class="all">
+        <div class="texto">
+            <h1>Pedra Papel Tesoura</h1>
+            <p>Escolha uma das opções a seguir: </p>
+        </div>
+        <div class="placar">
+            <p id="player1">0</p>
+            <p class="x">x</p>
+            <p id="player2">0</p>
+        </div>
+        <section class="flex">
+            <div id="opcoes1" class="opcoes1 opcoes">
+                <img onmouseover="mouseOver()" onmouseout="mouseOut()"   src="/Pedra-Papel-Tesoura/imagens/tesoura.png" alt="" class="tesoura">
+                <img onmouseover="mouseOver2()" onmouseout="mouseOut2()" src="/Pedra-Papel-Tesoura/imagens/papel.png" alt="" class="papel">
+                <img onmouseover="mouseOver3()" onmouseout="mouseOut3()" src="/Pedra-Papel-Tesoura/imagens/pedra.png" alt="" class="pedra">
+            </div>
+            <div id="opcoes2" class="opcoes2 opcoes">
+                <img src="/Pedra-Papel-Tesoura/imagens/tesoura.png" alt="" class="tesoura2">
+                <img src="/Pedra-Papel-Tesoura/imagens/papel.png" alt="" class="papel2">
+                <img src="/Pedra-Papel-Tesoura/imagens/pedra.png" alt="" class="pedra2">
+            </div>
+        </section>
+    </div>
+    <section class="secaoBotoes">
+        <div class="botoes">
+            <p id="resultado">Resultado</p>
+            <input id="btnPlacar" type="button" value="Jogar Novamente">
+            <input id="btnReiniciar" type="button" value="Reiniciar placar">
+        </div>        
+    </section>  
+    <script src="/Pedra-Papel-Tesoura/script.js"></script>
+</body>
+</html>
