@@ -170,7 +170,7 @@ function reiniciar(){
     contadorPlayer1 = 0
     contadorPlayer2 = 0
 
-    ativada = true
+    ativada = false
 
     placar1.innerHTML = contadorPlayer1
     placar2.innerHTML = contadorPlayer2
