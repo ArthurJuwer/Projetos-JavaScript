@@ -11,7 +11,6 @@ var pedra2 = document.querySelector("img.pedra2")
 var player1 = 0
 var player2 = Math.floor(Math.random() * 3) + 1
 
-
 var placar1 = document.querySelector("#player1")
 var placar2 = document.querySelector("#player2")
 
@@ -175,9 +174,7 @@ function reiniciar(){
 }
 function jogarNovamente(){
     player1 = 0
-    player2 = Math.floor(Math.random() * 3) + 1
-
-    //jogador.classList.add("imgsOpact")
+    player2 = Math.floor(Math.random() * 3) + 1   
   
     zerarOpacity()
 
