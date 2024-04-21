@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Interativo</title>
+        <link rel="stylesheet" href="/Quiz-Interativo/style.css">
+        <script defer src="/Quiz-Interativo/script.js"></script>
+    </head>
+    <body>
+        <div class="all">
+            <header>
+                <h1>Quiz de Perguntas</h1>
+                <div class="progress-porcentagem">
+                    <p class="atualporcentagem">0%</p>
+                    <p>100%</p> 
+                </div>
+                <progress id="progressBar" max="100" value="0"></progress> <!--PROGRESS BAR-->        
+            </header>
+            <section class="container on">
+                <div class="box-header">
+                    <div class="box-textos">
+                        <h2>Pergunta 1 </h2>
+                        <h4>Qual é a capital do estado de Minas Gerais?</h4> 
+                    </div>
+                    <div class="box-img">
+                        <img src="/Quiz-Interativo/image/lampada.png" alt="" class="lampada">                   
+                    </div>
+                </div>
+                <div class="box-resposta">
+                    <input type="button" value="Salvador">
+                    <input type="button" value="Belo Horizonte" class="switch">
+                    <input type="button" value="Porto Alegre">
+                    <input type="button" value="Boa Vista">
+                    <button>ENVIAR</button>
+                </div>
+            </section>
+
+            <section class="container off">
+                <div class="box-header">
+                    <div class="box-textos">
+                        <h2>Pergunta 2 </h2>
+                        <h4>Quem foi o primeiro ser humano a pisar na Lua?</h4> 
+                    </div>
+                    <div class="box-img">
+                        <img src="/Quiz-Interativo/image/lampada.png" alt="" class="lampada">                   
+                    </div>
+                </div>
+                <div class="box-resposta">
+                    <input type="button" value="Yuri Gagarin">
+                    <input type="button" value="Michael Collins">
+                    <input type="button" value="Buzz Aldrin">
+                    <input type="button" value="Neil Armstrong" class="switch">
+                    <button>ENVIAR</button>
+                </div>
+            </section>
+
+            <section class="container off">
+                <div class="box-header">
+                    <div class="box-textos">
+                        <h2>Pergunta 3 </h2>
+                        <h4>Qual país abaixo que é cortado pela Linha do Equador?</h4> 
+                    </div>
+                    <div class="box-img">
+                        <img src="/Quiz-Interativo/image/lampada.png" alt="" class="lampada">                   
+                    </div>
+                </div>
+                <div class="box-resposta">
+                    <input type="button" value="Brasil" class="switch">
+                    <input type="button" value="Colômbia">
+                    <input type="button" value="Indonésia">
+                    <input type="button" value="Argentina">
+                    <button>ENVIAR</button>
+                </div>
+            </section>
+
+            <section class="container off">
+                <div class="box-header">
+                    <div class="box-textos">
+                        <h2>Pergunta 4 </h2>
+                        <h4>Qual é o país mais populoso do mundo?</h4> 
+                    </div>
+                    <div class="box-img">
+                        <img src="/Quiz-Interativo/image/lampada.png" alt="" class="lampada">                   
+                    </div>
+                </div>
+                <div class="box-resposta">
+                    <input type="button" value="Estados Unidos">
+                    <input type="button" value="Índia">
+                    <input type="button" value="China" class="switch">
+                    <input type="button" value="Austrália">
+                    <button>ENVIAR</button>
+                </div>
+            </section>
+
+            <section class="container off">
+                <div class="box-header">
+                    <div class="box-textos">
+                        <h2>Pergunta 5 </h2>
+                        <h4>Qual é o maior oceano do mundo em área?</h4> 
+                    </div>
+                    <div class="box-img">
+                        <img src="/Quiz-Interativo/image/lampada.png" alt="" class="lampada">                   
+                    </div>
+                </div>
+                <div class="box-resposta">
+                    <input type="button" value="Oceano Pacífico" class="switch">
+                    <input type="button" value="Oceano Atlântico">
+                    <input type="button" value="Oceano Índico">
+                    <input type="button" value="Oceano Ártico">
+                    <button>ENVIAR</button>
+                </div>
+            </section>
+
+            <section class="resultados off">
+                <div class="box-header">
+                    <div class="box-textos">
+                        <h2>Resultados do Quiz</h2>
+                        <h4>Veja abaixo como você foi.</h4> 
+                    </div>
+                </div>
+                <div class="box-resposta">
+                    <div class="container-resposta">
+                        
+                        <div class="box-resultados">
+                            <div class="box-resultados-corpo">
+                                <p>RESPOSTAS CORRETAS:</p>
+                            </div>
+                            <div class="box-resultados-texto">
+                                <p class="acertos">0</p>
+                            </div>
+                        </div>
+                        <div class="box-resultados">
+                            <div class="box-resultados-corpo">
+                                <p>TEMPO PERCORRIDO:</p>
+                                <div class="tempo" id="finalizar">TERMINAR</div>
+                            </div>
+                            <div class="box-resultados-texto">
+                                <div id="cronometro">00:00</div>
+                            </div>
+                        </div>
+                        <div class="box-resultados">
+                            <div class="box-resultados-corpo">
+                                <p>DICAS USADAS:</p>
+                            </div>
+                            <div class="box-resultados-texto">
+                                <p class="dicasTexto">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="dicas off">
+            <div class="dicas-texto">
+                <div class="dicas-texto-header">
+                <h2>Pergunta 1</h2>
+                <div class="dicas-texto-header-img">
+                    <img src="/Quiz-Interativo/image/x.png" alt="" class="close">
+                </div>
+                </div>
+                <p>Qual é a capital do estado de Minas Gerais?</h4>
+                <h4>DICAS:</h4>
+                <p>"Esta capital começa com a letra B"</p>
+                <p>"Conhecida como BH"</p>
+                <p>"Capital Nacional dos Botecos"</p>
+            </div>
+        </div>
+
+        <div class="dicas off">
+            <div class="dicas-texto">
+                <div class="dicas-texto-header">
+                <h2>Pergunta 2</h2>
+                <div class="dicas-texto-header-img">
+                    <img src="/Quiz-Interativo/image/x.png" alt="" class="close">
+                </div>
+                </div>
+                <p>Quem foi o primeiro ser humano a pisar na Lua?</h4>
+                <h4>DICAS:</h4>
+                <p>"Ele era um astronauta americano"</p>
+                <p>"Ele comandou a missão Apollo 11 em 1969"</p>
+                <p>"Sua famosa frase ao pisar na Lua foi "Este é um pequeno passo para o homem, um salto gigante para a humanidade"</p>
+            </div>
+        </div>
+
+        <div class="dicas off">
+            <div class="dicas-texto">
+                <div class="dicas-texto-header">
+                <h2>Pergunta 3</h2>
+                <div class="dicas-texto-header-img">
+                    <img src="/Quiz-Interativo/image/x.png" alt="" class="close">
+                </div>
+                </div>
+                <p>Qual país abaixo que é cortado pela Linha do Equador?</h4>
+                <h4>DICAS:</h4>
+                <p>"É o maior país da América do Sul em área territorial"</p>
+                <p>"Possui uma extensa e diversificada biodiversidade, incluindo a Floresta Amazônica"</p>
+                <p>"Sua capital é Brasília, mas a cidade mais populosa é São Paulo"</p>
+            </div>
+        </div>
+        <div class="dicas off">
+            <div class="dicas-texto">
+                <div class="dicas-texto-header">
+                <h2>Pergunta 4</h2>
+                <div class="dicas-texto-header-img">
+                    <img src="/Quiz-Interativo/image/x.png" alt="" class="close">
+                </div>
+                </div>
+                <p>Qual é o país mais populoso do mundo?</h4>
+                <h4>DICAS:</h4>
+                <p>"Sua capital é Pequim"</p>
+                <p>"É localizado no continente asiático"</p>
+                <p>"Possui uma longa história e uma cultura rica, com contribuições significativas para a arte, filosofia, ciência e tecnologia ao longo dos séculos"</p>
+            </div>
+        </div>
+        <div class="dicas off">
+            <div class="dicas-texto">
+                <div class="dicas-texto-header">
+                <h2>Pergunta 5</h2>
+                <div class="dicas-texto-header-img">
+                    <img src="/Quiz-Interativo/image/x.png" alt="" class="close">
+                </div>
+                </div>
+                <p>Qual é o maior oceano do mundo em área?</h4>
+                <h4>DICAS:</h4>
+                <p>"É o oceano mais extenso em termos de área e volume de água."</p>
+                <p>"Possui inúmeras ilhas, incluindo o Havaí, as Filipinas e o Japão."</p>
+                <p>"É conhecido por suas vastas áreas de profundidade, abrigando a Fossa das Marianas, o ponto mais profundo da Terra"</p>
+            </div>
+        </div>
+        
+    </body>
+</html>
