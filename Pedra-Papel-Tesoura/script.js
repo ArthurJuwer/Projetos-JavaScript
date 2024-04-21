@@ -4,11 +4,17 @@ var tesoura = container.getElementsByTagName('img')[0];
 var papel = container.getElementsByTagName('img')[1];
 var pedra = container.getElementsByTagName('img')[2];
 
-var tesoura2 = document.querySelector("img.tesoura2")
-var papel2 = document.querySelector("img.papel2")
-var pedra2 = document.querySelector("img.pedra2")
+var container2 = document.getElementById('opcoes2');
+
+var tesoura2 = container2.getElementsByTagName('img')[0];
+var papel2 = container2.getElementsByTagName('img')[1];
+var pedra2 = container2.getElementsByTagName('img')[2];
+
+var contadorPlayer1 = 0
+var contadorPlayer2 = 0
 
 var player1 = 0
+
 var player2 = Math.floor(Math.random() * 3) + 1
 
 var placar1 = document.querySelector("#player1")
@@ -25,88 +31,83 @@ var btnPlacar = document.querySelector("input#btnPlacar")
 
 var ativada = false
 
+
+
 function zerarOpacity(){
-    pedra.style.opacity = "0.4"
-    papel.style.opacity = "0.4"   
-    tesoura.style.opacity = "0.4"
+    pedra.classList.remove("onOpacity")
+    papel.classList.remove("onOpacity") 
+    tesoura.classList.remove("onOpacity")
 }
 
-function selecionarTesoura(){
+tesoura.addEventListener("click", ()=>{
     ativada = true
     zerarOpacity()
-    tesoura.style.opacity = "1"  
+    tesoura.classList.add("onOpacity") 
     player1 = 1 // tesoura
-    resultado()   
-            
-}  
-function selecionarPapel(){
+    resultado() 
+})
+
+papel.addEventListener("click", ()=>{
     ativada = true
     zerarOpacity()
-    papel.style.opacity = "1"
+    papel.classList.add("onOpacity") 
     player1 = 2 // papel
     resultado()
-}
-function selecionarPedra(){
+})
+pedra.addEventListener("click", ()=>{
     ativada = true
     zerarOpacity()
-    pedra.style.opacity = "1" 
+    pedra.classList.add("onOpacity") 
     player1 = 3 // pedra
     resultado()
-}
-
-tesoura.addEventListener("click", selecionarTesoura)
-papel.addEventListener("click", selecionarPapel)
-pedra.addEventListener("click", selecionarPedra)
+})
 
 
 function mouseOver() {
-    tesoura.style.opacity = "1";
+    tesoura.classList.add("onOpacity");
 }
   
 function mouseOut() {    
-    tesoura.style.opacity = "0.4";
+    tesoura.classList.remove("onOpacity");
 
     if(ativada == true){
-        tesoura.style.opacity = "1"; 
+        tesoura.classList.add("onOpacity"); 
     }
 }
 
 function mouseOver2() {
-    papel.style.opacity = "1";
+    papel.classList.add("onOpacity");
 }
   
 function mouseOut2() {
-    papel.style.opacity = "0.4";
+    papel.classList.remove("onOpacity");
 
     if(ativada == true){
-        papel.style.opacity = "1"; 
+        papel.classList.add("onOpacity"); 
     }
 }
 
 function mouseOver3() {
-    pedra.style.opacity = "1";
+    pedra.classList.add("onOpacity");
 }
   
 function mouseOut3() {
-    pedra.style.opacity = "0.4";
+    pedra.classList.remove("onOpacity"); 
     
     if(ativada == true){
-        pedra.style.opacity = "1"; 
+        pedra.classList.add("onOpacity");  
     }
 }
-var contadorPlayer1 = 0
-var contadorPlayer2 = 0
-
 
 function selecionarInimigo(){
     if(player2 == 1){
-        tesoura2.style.opacity = "1"
+        tesoura2.classList.add("onOpacity")
     }
     else if(player2 == 2){
-        papel2.style.opacity = "1"
+        papel2.classList.add("onOpacity")
     }
     else{
-        pedra2.style.opacity = "1"
+        pedra2.classList.add("onOpacity")
     }
 }
 
@@ -116,63 +117,34 @@ function atualizarPlacar(){
 }
 
 function resultado(){
-    if(player1 == player2){
-        resultadoFinal.innerHTML = "Empate"
-        selecionarInimigo()
-        botoes.style.opacity = "1"        
-        all.classList.add("allAtivado");
+    switch(true){
+        case player1 == player2:{
+            resultadoFinal.innerHTML = "Empate"
+            selecionarInimigo()
+            botoes.classList.add("onOpacity")      
+            all.classList.add("allAtivado");
+            break
+        }
+        case player1 == 1 && player2 == 2 || player1 == 2 && player2 == 3 || player1 == 3 && player2 == 1:{
+            resultadoFinal.innerHTML = "Você Ganhou"
+            selecionarInimigo()
+            contadorPlayer1+= 1;
+            botoes.classList.add("onOpacity")
+            all.classList.add("allAtivado");
+            break
+        }
+        default:{
+            resultadoFinal.innerHTML = "Você Perdeu"
+            selecionarInimigo()
+            contadorPlayer2++
+            botoes.classList.add("onOpacity")
+            all.classList.add("allAtivado");
+        }
     }
-    else if(player1 == 1 && player2 == 2){
-        resultadoFinal.innerHTML = "Você Ganhou"
-        selecionarInimigo()
-        contadorPlayer1+= 1;
-        botoes.style.opacity = "1"
-        all.classList.add("allAtivado");
-    }
-    else if(player1 == 2 && player2 == 3){
-        resultadoFinal.innerHTML = "Você Ganhou"
-        selecionarInimigo()
-        contadorPlayer1++
-        botoes.style.opacity = "1"
-        all.classList.add("allAtivado");
-    }
-    else if(player1 == 3 && player2 == 1){
-        resultadoFinal.innerHTML = "Você Ganhou"
-        selecionarInimigo()
-        contadorPlayer1++ 
-        botoes.style.opacity = "1"
-        all.classList.add("allAtivado");
-    }
-    else{
-        resultadoFinal.innerHTML = "Você Perdeu"
-        selecionarInimigo()
-        contadorPlayer2+=1
-        botoes.style.opacity = "1"
-        all.classList.add("allAtivado");
-    }   
     atualizarPlacar()         
 }
 
-function reiniciar(){    
-    contadorPlayer1 = 0
-    contadorPlayer2 = 0
-
-    ativada = false
-
-    placar1.innerHTML = contadorPlayer1
-    placar2.innerHTML = contadorPlayer2
-    
-    botoes.style.opacity = "0"
-
-    zerarOpacity()
-
-    tesoura2.style.opacity = "0.4"  
-    papel2.style.opacity = "0.4"
-    pedra2.style.opacity = "0.4"
-    
-    all.classList.remove("allAtivado");
-}
-function jogarNovamente(){
+btnPlacar.addEventListener("click", ()=>{
     player1 = 0
     player2 = Math.floor(Math.random() * 3) + 1   
   
@@ -180,12 +152,30 @@ function jogarNovamente(){
 
     ativada = false
 
-    tesoura2.style.opacity = "0.4"  
-    papel2.style.opacity = "0.4"
-    pedra2.style.opacity = "0.4"
+    tesoura2.classList.remove("onOpacity") 
+    papel2.classList.remove("onOpacity") 
+    pedra2.classList.remove("onOpacity") 
     
-    botoes.style.opacity = "0"
+    botoes.classList.remove("onOpacity")
     all.classList.remove("allAtivado");
-}  
-btnPlacar.addEventListener("click", jogarNovamente)
-btnReiniciar.addEventListener("click", reiniciar) 
+})
+
+btnReiniciar.addEventListener("click", ()=>{      
+        contadorPlayer1 = 0
+        contadorPlayer2 = 0
+    
+        ativada = false
+    
+        placar1.innerHTML = contadorPlayer1
+        placar2.innerHTML = contadorPlayer2
+        
+        botoes.classList.remove("onOpacity")
+    
+        zerarOpacity()
+    
+        tesoura2.classList.remove("onOpacity")  
+        papel2.classList.remove("onOpacity") 
+        pedra2.classList.remove("onOpacity") 
+        
+        all.classList.remove("allAtivado");
+}) 

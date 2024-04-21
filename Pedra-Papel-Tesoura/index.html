@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedra, Papel, Tesoura</title>    
-    <link rel="stylesheet" href="/Pedra-Papel-Tesoura/style.css">    
+    <link rel="stylesheet" href="/Pedra-Papel-Tesoura/style.css">  
+    <script defer src="/Pedra-Papel-Tesoura/script.js"></script>  
 </head>
 <body>
     <div class="all">
@@ -13,20 +14,20 @@
             <p>Escolha uma das opções a seguir: </p>
         </div>
         <div class="placar">
-            <p id="player1">0</p>
+            <p id="player1">Player 1 <br><br>0</p>
             <p class="x">x</p>
-            <p id="player2">0</p>
+            <p id="player2">Player 2 <br><br>0</p>
         </div>
         <section class="flex">
             <div id="opcoes1" class="opcoes">
-                <img onmouseover="mouseOver()" onmouseout="mouseOut()"   src="/Pedra-Papel-Tesoura/imagens/tesoura.png" alt="" class="tesoura">
-                <img onmouseover="mouseOver2()" onmouseout="mouseOut2()" src="/Pedra-Papel-Tesoura/imagens/papel.png" alt="" class="papel">
-                <img onmouseover="mouseOver3()" onmouseout="mouseOut3()" src="/Pedra-Papel-Tesoura/imagens/pedra.png" alt="" class="pedra">
+                <img onmouseover="mouseOver()" onmouseout="mouseOut()"   src="/Pedra-Papel-Tesoura/imagens/tesoura.png">
+                <img onmouseover="mouseOver2()" onmouseout="mouseOut2()" src="/Pedra-Papel-Tesoura/imagens/papel.png">
+                <img onmouseover="mouseOver3()" onmouseout="mouseOut3()" src="/Pedra-Papel-Tesoura/imagens/pedra.png">
             </div>
             <div id="opcoes2" class="opcoes">
-                <img src="/Pedra-Papel-Tesoura/imagens/tesoura.png" alt="" class="tesoura2">
-                <img src="/Pedra-Papel-Tesoura/imagens/papel.png" alt="" class="papel2">
-                <img src="/Pedra-Papel-Tesoura/imagens/pedra.png" alt="" class="pedra2">
+                <img src="/Pedra-Papel-Tesoura/imagens/tesoura.png">
+                <img src="/Pedra-Papel-Tesoura/imagens/papel.png">
+                <img src="/Pedra-Papel-Tesoura/imagens/pedra.png">
             </div>
         </section>
     </div>
@@ -37,6 +38,5 @@
             <input id="btnReiniciar" type="button" value="Reiniciar placar">
         </div>        
     </section>  
-    <script src="/Pedra-Papel-Tesoura/script.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 body{
+    position: relative;
     font: normal 15pt Arial;
 }
 div.texto{
@@ -33,24 +34,25 @@ div.opcoes:nth-child(2){
     align-items: end;
     margin-right: 50px;
 }
-.tesoura, .papel, .pedra{
+#opcoes1 img{
     transform: rotate(250deg);
 }
 div.placar{
     display: flex;
     font-size: 25px;
     flex-direction: row;
-    margin-left: 60px;   
+    justify-content: space-between;
+    margin-left: 55px;
+    margin-right: 80px;
+    text-align: center;
 }
-.x{
-    margin-left: 45%;
-    margin-right: 45%;
-}
+
 section.secaoBotoes{
     position: absolute;
     opacity: 0;
-    top: 45%;
-    left: 35%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     text-align: center;
     justify-content: center;
@@ -76,6 +78,8 @@ section.secaoBotoes input{
     opacity: 0.8;
     pointer-events: none;
 }
-.imgsOpact{
-    opacity: 0.4;
+.onOpacity{
+    opacity: 1 !important; 
 }
+
+
