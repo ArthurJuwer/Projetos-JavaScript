@@ -52,7 +52,7 @@ div.word input:focus{
     
 }
 .correct{
-    background:green;
+    background:green !important;
 }
 .incorrect{
     background:red;
