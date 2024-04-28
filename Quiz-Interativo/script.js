@@ -1,31 +1,23 @@
 var boxRespotas = document.querySelector("div.box-resposta")
-var opcoes = document.getElementsByTagName("input")
 
-var enviar = document.getElementsByTagName("button")
+var opcoes = document.getElementsByTagName("input"),
+enviar = document.getElementsByTagName("button"), 
+container = document.getElementsByTagName("section")
 
-var container = document.getElementsByTagName("section")
+const progressBar = document.getElementById("progressBar")
 
-var progressBar = document.getElementById("progressBar")
+const acertos = document.querySelector("p.acertos"),
+ dicasTexto = document.querySelector("p.dicasTexto"),
+ porcentagem = document.querySelector("p.atualporcentagem"),
+ all = document.querySelector(".all")
 
-var porcentagem = document.querySelector("p.atualporcentagem")
+var contadorAcertos = 0, 
+contadorDicas = 0, 
+whatPage = 0
 
-var acertos = document.querySelector("p.acertos")
-
-var dicasTexto = document.querySelector("p.dicasTexto")
-
-var contadorAcertos = 0
-
-var contadorDicas = 0
-
-var closeIcon = document.getElementsByClassName("dicas-texto-header-img")
-
-var openDicas = document.getElementsByClassName("box-img")
-
-var dicas = document.getElementsByClassName("dicas")
-
-var all = document.querySelector(".all")
-
-var whatPage = 0
+const closeIcon = document.getElementsByClassName("dicas-texto-header-img"), 
+openDicas = document.getElementsByClassName("box-img"), 
+dicas = document.getElementsByClassName("dicas")
 
 var block = false
 
