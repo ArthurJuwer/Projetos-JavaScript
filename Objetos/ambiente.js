@@ -1,4 +1,4 @@
-let Carro = {
+const Carro = {
     marca: "Ford",
     modelo: "K.A",
     ano: "2002",
@@ -22,3 +22,32 @@ console.log("\nQual é o barulho da buzina?")
 
 console.log(Carro.buzinar())
 
+console.log(`\n-> O numero de rodas do carro é ${Carro.Rodas}`)
+
+Carro["Rodas"] = 4 // adicionando uma propriedade   
+console.log(`-> O numero de rodas do carro é ${Carro.Rodas} \n`)
+
+const nomePropriedade = "Motores"
+Carro[nomePropriedade] = 1
+
+
+console.log(`-> O numero de motores é  do carro é ${Carro.Motores}`)  
+
+console.log("\nQuero adicionar +1 motor")
+Carro.Motores = 2
+console.log(`-> Agora o numero de motores é  do carro é ${Carro.Motores}`)  
+
+Object.defineProperty(Carro, "Portas", {
+    value: 2.0,
+    writable: false
+    // nao pode ser rescreito : false
+    // pode ser rescrito caso tiver o : true
+})
+
+console.log(`O numero de portas é: ${Carro.Portas}`)
+
+Carro.Portas = 3.0 // não funciona pelo fato de ter o writable: false (ele vem por padrao)
+
+console.log(`O numero de portas é: ${Carro.Portas}`)
+
+console.log("Todas as informações são: \n",Carro)
