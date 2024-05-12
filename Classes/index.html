@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Classes</title>
+</head>
+<body>
+    <label for="">Marca: </label>
+    <input type="text" name="" id="marca">
+    <label for="">Modelo: </label>
+    <input type="text" name="" id="modelo">
+    <label for="">Ano: </label>
+    <input type="text" name="" id="ano">
+    <button id="informacoes">Mostrar Informações do Carro</button>
+    <button id="array">Mostrar Todos Adicionados.</button>
+    <div id="carros"></div>
+    <script>
+
+        const marcaV = document.querySelector("#marca"),
+         modeloV = document.querySelector("#modelo"),
+         anoV = document.querySelector("#ano"),
+         btnMostrarInformaçoes = document.querySelector("#informacoes"),
+         btnMostrarArray = document.querySelector("#array"),
+         carrosDiv = document.querySelector("#carros");
+
+
+        class Carro{
+            constructor(marca,modelo,ano){
+                this.marca = marca;
+                this.modelo = modelo;
+                this.ano =  ano;
+            }
+            todasInformações() {
+                return `A marca deste carro é ${this.marca}, no modelo ${this.modelo} ${this.ano}`;
+            }
+        }
+        let todosCarros = [];
+        
+
+        btnMostrarInformaçoes.addEventListener("click", ()=>{
+            let carroAtual = new Carro(marcaV.value, modeloV.value, anoV.value);
+            todosCarros.push(carroAtual);
+            alert(carroAtual.todasInformações());
+        });
+        btnMostrarArray.addEventListener("click", ()=>{
+            carrosDiv.innerHTML = ""; // Clear the previous content
+            todosCarros.forEach(carro => {
+                carrosDiv.innerHTML += `<p>${carro.todasInformações()}</p>`;
+            });
+        });
+
+
+    </script>
+</body>
+</html>
